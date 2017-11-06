@@ -48,6 +48,8 @@
         </p>
         <!--close jumbotron-->
       </div>
+      {% block content %}
+      {% endblock %}
       <nav aria-label="Page navigation example">
         <ul class="pagination">
           <li class="page-item">
@@ -67,43 +69,6 @@
           </li>
         </ul>
       </nav>
-      <div class="row pb-3">
-         <div class="col-sm-12">
-           <p class="text-center"> TITOLO </p>
-         </div>
-      </div>
-      <div class="row pt-4">
-        <div class="col-sm-4">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"> IP1 </span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-        </div>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"> SUB MASK</span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-        </div>
-      </div>
-      <div class="row pt-4">
-        <div class="col-sm-4">
-          <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1"> IP2 </span>
-            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-          </div>
-        </div>
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4"></div>
-      </div>
-      <div class="row pt-4">
-        <div class="col-sm-4"></div>
-        <div class="col-sm-4">
-          <button type="button" class="btn btn-light">Okay</button>
-        </div>
-        <div class="col-sm-4"></div>
-      </div>
       <!--close div container-->
     </div>
     <!--Bootstrapp js-->
