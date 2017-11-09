@@ -4,16 +4,13 @@
     <title> Sistemi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" charset="utf-8">
     <!--Bootstrapp css-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
-          integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-          crossorigin="anonymous">
-    <!-- Google material icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link rel="stylesheet" href="{% static "bootstrap-css/bootstrap.min.css" %}">
+    <!--Modified CSS-->
+    <link rel="stylesheet" href="{% static "css/mio.css" %}">
   </head>
   <body>
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="https://github.com/EnricoBiancotto/webapp.py" target="_blank"><img src="{% static "webapp/mark-github.svg" %}" width="30" height="30" alt=""></a>
+      <a class="navbar-brand" href="https://github.com/EnricoBiancotto/webapp.py" target="_blank"><img src="{% static "webapp.py-master/mark-github.svg" %}" width="30" height="30" alt=""></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -23,11 +20,22 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#progetto">Progetto</a>
+            <a class="nav-link" href="#begin">Progetto</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Chi Siamo</a>
+            <a class="nav-link" href="https://github.com/EnricoBiancotto/webapp.py" target="_blank">Github</a>
           </li>
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
         </ul>
       </div>
       <!--close navbar-->
@@ -42,39 +50,99 @@
         </p>
         <!--close jumbotron-->
       </div>
-      <div id="begin"></div>
-      {% block content %}
-      {% endblock %}
-      <nav aria-label="Page navigation example">
-        <ul class="pagination">
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-              <span class="sr-only">Previous</span>
-            </a>
-          </li>
-          <li class="page-item"><a class="page-link" href="#">1</a></li>
-          <li class="page-item"><a class="page-link" href="#">2</a></li>
-          <li class="page-item"><a class="page-link" href="#">3</a></li>
-          <li class="page-item">
-            <a class="page-link" href="#" aria-label="Next">
-              <span aria-hidden="true">&raquo;</span>
-              <span class="sr-only">Next</span>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!--close div container-->
-    </div>
+      <h1 id="begin">Progetto</h1>
+      <br>
+      <!--Start scrollspy-->
+      <div class="bd-example">
+        <div class="row">
+          <div class="col-4">
+            <nav style="height: 450;" id="navbar-example3" class="navbar navbar-light bg-light flex-column" >
+              <a class="navbar-brand" href="#">Menù</a>
+              <nav class="nav nav-pills flex-column">
+                <a class="nav-link" href="#item-1">Intro IPv4</a>
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3 my-1" href="#item-1-1">Classi</a>
+                </nav>
+                <a class="nav-link" href="#item-2">Intro Subnetting</a>
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3 my-1" href="#item-2-1">Subnet</a>
+                  <a class="nav-link ml-3 my-1" href="#item-2-2">Messa in and</a>
+                </nav>
+                <a class="nav-link" href="#item-3">Intro CIDR</a>
+                <nav class="nav nav-pills flex-column">
+                  <a class="nav-link ml-3 my-1" href="#item-3-1">CIDR</a>
+                </nav>
+              </nav>
+              <br><br>
+            </nav>
+          </div>
+          <div class="col-8">
+            <div data-spy="scroll" data-target="#navbar-example3" data-offset="0" class="scrollspy-example-2" style="height: 450;overflow-y: scroll;">
+              <h4 id="item-1">
+                <!--Intro IPv4-->
+                <p>Cos'è un indirizzo IP?</p>
+              </h4>
+              {% block ipv4 %}
+              {% endblock %}
+              <h4 id="item-1-1">
+                <!--Classi IP-->
+                <p>Trova classe dell'indirizzo IP</p>
+                </h4>
+              <h5>
+                {% block classi %}
+                {% endblock %}
+              </h5>         
+              <h4 id="item-2">
+                <!--Intro Subnetting-->
+                <p>Cos'è una subnet?</p>
+              </h4>
+              {% block subnetting %}
+              {% endblock %}
+              <h4 id="item-2-1">
+                <!--Trova Subnet-->
+                <p>Calcolo della subnet</p>
+              </h4>
+              <h5>
+                {% block trova_subnet %}
+                {% endblock %}
+              </h5>
+              <h4 id="item-2-2">
+                <!--Messa in And-->
+                <p>Messa in AND</p>
+              </h4>
+              <h5>
+                {% block bitwise %}
+                {% endblock %}
+              </h5>
+              <h4 id="item-3">
+                <!--Intro CIDR-->
+              <p>Intro CIDR</p>
+              </h4>
+              {% block intro_cidr %}
+              {% endblock %}
+              <h4 id="item-3-1">
+                <!--CIDR-->   
+                <p>Calcolo CIDR</p>            
+              </h4>
+              <h5>
+              {% block cidr %}
+              {% endblock %}
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br><br><br>
     <!--Footer-->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light pt-0" >
       <span class="navbar-text">
       	<a> Copyright &#9400 2017 ITTS V.Volterra all rights riserved </a>
       </span>
     </nav>
     <!--Bootstrapp js-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="{% static "js/mio.js" %}"></script>
+    <script src="{% static "bootstrap-js/jquery-3.2.1.slim.min.js" %}"></script>
+    <script src="{% static "bootstrap-js/popper.min.js" %}"></script>
+    <script src="{% static "bootstrap-js/bootstrap.min.js" %}"></script>
   </body>
 </html>
