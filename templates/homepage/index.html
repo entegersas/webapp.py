@@ -25,17 +25,6 @@
           <li class="nav-item">
             <a class="nav-link" href="https://github.com/EnricoBiancotto/webapp.py" target="_blank">Github</a>
           </li>
-          <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
         </ul>
       </div>
       <!--close navbar-->
@@ -52,12 +41,13 @@
       </div>
       <h1 id="begin">Progetto</h1>
       <br>
+      {% block principale %}
       <!--Start scrollspy-->
       <div class="bd-example">
         <div class="row">
           <div class="col-4">
             <nav style="height: 450;" id="navbar-example3" class="navbar navbar-light bg-light flex-column" >
-              <a class="navbar-brand" href="#">Menù</a>
+              <a class="navbar-brand" href="#begin">Menù</a>
               <nav class="nav nav-pills flex-column">
                 <a class="nav-link" href="#item-1">Intro IPv4</a>
                 <nav class="nav nav-pills flex-column">
@@ -91,7 +81,7 @@
               <h5>
                 {% block classi %}
                 {% endblock %}
-              </h5>         
+              </h5>
               <h4 id="item-2">
                 <!--Intro Subnetting-->
                 <p>Cos'è una subnet?</p>
@@ -121,8 +111,8 @@
               {% block intro_cidr %}
               {% endblock %}
               <h4 id="item-3-1">
-                <!--CIDR-->   
-                <p>Calcolo CIDR</p>            
+                <!--CIDR-->
+                <p>Calcolo CIDR</p>
               </h4>
               <h5>
               {% block cidr %}
@@ -131,8 +121,10 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><!--End scrollspy-->
       <br><br><br><br>
+      {% endblock %}
+    </div>
     <!--Footer-->
     <nav class="navbar fixed-bottom navbar-expand-lg navbar-light bg-light pt-0" >
       <span class="navbar-text">
